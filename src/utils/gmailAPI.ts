@@ -34,38 +34,84 @@ export const initGmailClient = async (): Promise<void> => {
   });
 };
 
+// export const fetchEmails = async (
+//   accessToken: string,
+//   maxResults = 50
+// ): Promise<Email[]> => {
+//   if (!window.gapi?.client?.gmail) {
+//     throw new Error("GAPI client is not initialized. Please try again later.");
+//   }
+
+//   window.gapi.client.setToken({ access_token: accessToken });
+
+//   const response = await window.gapi.client.gmail.users.messages.list({
+//     userId: "me",
+//     maxResults,
+//     q: "in:inbox",
+//   });
+
+//   const messages = response.result.messages;
+//   if (!messages) return [];
+
+//   const emails = await Promise.all(
+//     messages.map(async ({ id }) => {
+//       const message = await window.gapi.client.gmail.users.messages.get({
+//         userId: "me",
+//         id,
+//         format: "full",
+//       });
+//       return processEmail(message.result);
+//     })
+//   );
+
+//   return emails;
+// };
+
 export const fetchEmails = async (
   accessToken: string,
   maxResults = 50
 ): Promise<Email[]> => {
-  if (!window.gapi?.client?.gmail) {
-    throw new Error("GAPI client is not initialized. Please try again later.");
+  const headers = {
+    Authorization: `Bearer ${accessToken}`,
+    Accept: "application/json",
+  };
+
+  // Step 1: Get list of message IDs
+  const listRes = await fetch(
+    `https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=${maxResults}&q=in:inbox`,
+    { headers }
+  );
+
+  if (!listRes.ok) {
+    throw new Error("Failed to fetch email list");
   }
 
-  window.gapi.client.setToken({ access_token: accessToken });
-
-  const response = await window.gapi.client.gmail.users.messages.list({
-    userId: "me",
-    maxResults,
-    q: "in:inbox",
-  });
-
-  const messages = response.result.messages;
+  const listData = await listRes.json();
+  const messages = listData.messages;
   if (!messages) return [];
 
+  // Step 2: Fetch each message by ID
   const emails = await Promise.all(
-    messages.map(async ({ id }) => {
-      const message = await window.gapi.client.gmail.users.messages.get({
-        userId: "me",
-        id,
-        format: "full",
-      });
-      return processEmail(message.result);
+    messages.map(async ({ id }: { id: string }) => {
+      const msgRes = await fetch(
+        `https://gmail.googleapis.com/gmail/v1/users/me/messages/${id}?format=full`,
+        { headers }
+      );
+
+      if (!msgRes.ok) {
+        console.warn(`Failed to fetch email with ID: ${id}`);
+        return null;
+      }
+
+      const msgData = await msgRes.json();
+      return processEmail(msgData);
     })
   );
 
-  return emails;
+  // Filter out null responses (failed fetches)
+  return emails.filter((email): email is Email => email !== null);
 };
+
 
 
 // Process individual email message

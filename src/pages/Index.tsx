@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage";
 
 const Index = () => {
   const { isAuthenticated, isLoading } = useAuth();
-  
+
   if (isLoading) {
     return (
       <div className="flex h-screen items-center justify-center">
@@ -14,6 +14,7 @@ const Index = () => {
   }
 
   return isAuthenticated ? <DashboardPage /> : <LoginPage />;
+//   return <LoginPage />;
 };
 
 export default Index;

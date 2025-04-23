@@ -2,6 +2,8 @@
 
 Welcome to **MindMail** — a website designed to make managing your emails a seamless and efficient experience. Built with love using powerful, no-code tools, **MindMail** integrates seamlessly with Google's API to enhance your email workflows.
 
+![Image](https://github.com/user-attachments/assets/68a491ad-2160-45d4-a6d4-cc4a5b53f8f0)
+
 ## 🚀 About the Project
 
 MindMail is an email management web app that leverages **Google API integration** to access Gmail data, categorize emails, and provide users with helpful insights, summaries, and prioritization.
@@ -20,7 +22,6 @@ MindMail is an email management web app that leverages **Google API integration*
 - **Hugging Face API**: Used for text summarization and email priority classification.
 - **React**: The front-end is developed using React to ensure a responsive and dynamic user interface.
 - **TailwindCSS**: Utilized for building a clean, responsive design that’s easy to customize.
-- **Node.js & Express**: Server-side logic to manage API calls and facilitate the Gmail API interactions.
 
 ---
 

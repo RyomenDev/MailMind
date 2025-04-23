@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+# MindMail: Your Personalized Email Management Assistant
 
-## Project info
+Welcome to **MindMail** — a website designed to make managing your emails a seamless and efficient experience. Built with love using powerful, no-code tools, **MindMail** integrates seamlessly with Google's API to enhance your email workflows.
 
-**URL**: https://lovable.dev/projects/6137094a-c09d-409c-a439-db56d0d43cbc
+## 🚀 About the Project
 
-## How can I edit this code?
+MindMail is an email management web app that leverages **Google API integration** to access Gmail data, categorize emails, and provide users with helpful insights, summaries, and prioritization.
 
-There are several ways of editing your application.
+### Features:
+- **Gmail Integration**: Access and manage your Gmail account using the Google API.
+- **Email Summarization**: Automatically generate summaries of your emails to save time.
+- **Priority Classification**: Classify your emails as high, medium, or low priority using a machine learning model.
+- **User-Friendly Interface**: A clean and intuitive UI, designed to improve user experience and streamline email management.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6137094a-c09d-409c-a439-db56d0d43cbc) and start prompting.
+## 🛠️ Technologies Used
+- **No-Code Tools**: Built with the help of visual development platforms that offer easy integration with third-party APIs.
+- **Google APIs**: Integrated with Gmail API to read and interact with users' emails.
+- **Hugging Face API**: Used for text summarization and email priority classification.
+- **React**: The front-end is developed using React to ensure a responsive and dynamic user interface.
+- **TailwindCSS**: Utilized for building a clean, responsive design that’s easy to customize.
+- **Node.js & Express**: Server-side logic to manage API calls and facilitate the Gmail API interactions.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🔑 Google API Integration
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+MindMail integrates directly with **Google Gmail API** to allow users to:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Read Emails**: Fetch emails from your Gmail inbox.
+- **Generate Summaries**: Using Hugging Face’s NLP models to create email summaries automatically.
+- **Classify Email Priorities**: Classify emails into high, medium, or low priority based on their content.
 
-Follow these steps:
+### Google API Permissions Required:
+- **Read access to Gmail**: To read emails and categorize them.
+- **Gmail Readonly Scope**: Limited to reading Gmail messages, no modification.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🔐 Privacy & Security
 
-# Step 3: Install the necessary dependencies.
-npm i
+MindMail ensures the utmost privacy and security by using OAuth2 for authentication, allowing users to authenticate their Google account securely without sharing passwords. All email data is fetched in real-time through Google’s API, and no data is stored on the server.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🛠️ Fixes & Improvements
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+While the initial version of **MindMail** was built using a no-code platform, key fixes and improvements have been added, including:
 
-**Use GitHub Codespaces**
+- **Google API Integration**: Enhanced Gmail integration to ensure smooth authentication and secure data retrieval.
+- **Bug Fixes**: Resolved issues with the email fetch functionality to improve reliability.
+- **UI Enhancements**: Improved UI elements for better usability and smoother experience across devices.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6137094a-c09d-409c-a439-db56d0d43cbc) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

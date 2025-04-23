@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 260 33% 98%;
+    --foreground: 240 10% 20%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    /* Primary - Purple */
+    --primary: 255 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 260 33% 96%;
+    --secondary-foreground: 240 10% 20%;
+
+    /* Muted */
+    --muted: 260 33% 96%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent */
+    --accent: 255 80% 95%;
+    --accent-foreground: 255 80% 50%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 240 5% 90%;
+    --input: 240 5% 90%;
+    --ring: 255 80% 75%;
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 255 80% 99%;
+    --sidebar-foreground: 240 10% 20%;
+    --sidebar-primary: 255 80% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 255 80% 95%;
+    --sidebar-accent-foreground: 255 80% 50%;
+    --sidebar-border: 255 50% 92%;
+    --sidebar-ring: 255 80% 75%;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 240 10% 10%;
+    --foreground: 0 0% 95%;
+
+    /* Card */
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover */
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - Purple */
+    --primary: 255 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 240 5% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    /* Muted */
+    --muted: 240 5% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent */
+    --accent: 255 50% 30%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Border & Input */
+    --border: 240 5% 26%;
+    --input: 240 5% 26%;
+    --ring: 255 80% 75%;
+
+    /* Sidebar */
+    --sidebar-background: 240 10% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 255 80% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 5% 15%;
+    --sidebar-ring: 255 80% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
